@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Results</title>
+</head>
+<body>
+
+	<form>
+		<table>
+			<tr th:each="currentHeadphone : ${headphones}" >
+				<td th:text="${currentHeadphone.id}" />
+					<td th:text="${currentHeadphone.name}" />
+					<td th:text="${currentHeadphone.weight}" />
+					<td th:text="${currentHeadphone.driver}" />
+					<td th:text="${currentHeadphone.impedance}" />
+				<td><a th:href="@{/edit/{id}(id=${currentHeadphone.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentHeadphone.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	<a href="../inputHeadphone">Add a new Headphone</a>
+
+</body>
+</html>

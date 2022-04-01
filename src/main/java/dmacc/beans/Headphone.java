@@ -69,19 +69,19 @@ public class Headphone {
 		this.name = name;
 	}
 
-	public int getWeightInGrams() {
+	public int getWeight() {
 		return weightInGrams;
 	}
 
-	public void setWeightInGrams(int weightInGrams) {
+	public void setWeight(int weightInGrams) {
 		this.weightInGrams = weightInGrams;
 	}
 
-	public String getDriverType() {
+	public String getDriver() {
 		return driverType;
 	}
 
-	public void setDriverType(String driverType) {
+	public void setDriver(String driverType) {
 		this.driverType = driverType;
 	}
 

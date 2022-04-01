@@ -15,14 +15,14 @@ import dmacc.controller.BeanConfiguration;
 import dmacc.repository.HeadphoneRepository;
 
 @SpringBootApplication
-public class SpringHeadphonesApplication implements CommandLineRunner{
+public class SpringHeadphonesApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringHeadphonesApplication.class, args);
 
 	}
 	
-	@Autowired
+	/*@Autowired
 	HeadphoneRepository repo;
 	
 	@Override
@@ -42,6 +42,6 @@ public class SpringHeadphonesApplication implements CommandLineRunner{
 			System.out.println(headphone.toString());
 		}
 		((AbstractApplicationContext) appContext).close();
-	}
+	}*/
 
 }

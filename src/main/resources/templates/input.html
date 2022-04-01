@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>New Headphone</title>
+</head>
+<body>
+	<form th:object="${newHeadphone}" th:action="@{/update/{id}(id=${newHeadphone.id})}" method='POST'>
+		Name: <input name="name" size = "20" th:field="*{name}"><br />
+		Weight: <input name="weight" size = "20" th:field="*{weight}"><br />
+		Driver: <input name="driver" size = "20" th:field="*{driver}"><br />
+		Impedance: <input name="impedance" size = "20" th:field="*{impedance}"><br />
+		<input name="submit" type="submit" value="submit" />
+	</form>
+	<a href="viewAll">View all Headphones</a>
+</body>
+</html>
