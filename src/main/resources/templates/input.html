@@ -3,14 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <title>New Headphone</title>
+
+<script type = "text/javascript">
+
+      function validate() {
+    	  var pass = true; 
+      
+         if( document.headphoneForm.name.value == "" ) {
+            alert( "Please enter the name" );
+            pass = false;
+         }
+         if( document.headphoneForm.weight.value == "" || isNaN( document.headphoneForm.weight.value ) ) {
+            alert( "Please enter the weight as a number" );
+            pass = false;
+         }
+         if( document.headphoneForm.driver.value == "" ) {
+             alert( "Please enter the driver" );
+             pass = false;
+          }
+         if( document.headphoneForm.impedance.value == "" || isNaN( document.headphoneForm.impedance.value ) ) {
+            alert( "Please enter the impedance as a number" );
+            pass = false;
+         }
+        
+        return pass;
+         
+      }
+      
+</script>
+
 </head>
 <body>
-	<form th:object="${newHeadphone}" th:action="@{/update/{id}(id=${newHeadphone.id})}" method='POST'>
+	<form th:object="${newHeadphone}" th:action="@{/update/{id}(id=${newHeadphone.id})}" method='POST' name = headphoneForm onsubmit = "return validate()">
 		Name: <input name="name" size = "20" th:field="*{name}"><br />
 		Weight: <input name="weight" size = "20" th:field="*{weight}"><br />
 		Driver: <input name="driver" size = "20" th:field="*{driver}"><br />
 		Impedance: <input name="impedance" size = "20" th:field="*{impedance}"><br />
-		<input name="submit" type="submit" value="submit" />
+		<input name="submit" type="submit" value="submit"/>
 	</form>
 	<a href="viewAll">View all Headphones</a>
 </body>
